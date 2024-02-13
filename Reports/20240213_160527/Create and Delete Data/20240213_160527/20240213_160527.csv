@@ -1,0 +1,19 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+Create and Delete Data,,,,13-02-2024 16:05:40,13-02-2024 16:06:09,28.269s,FAILED
+,,,,,,,
+Test Cases/Create Booking,,,,13-02-2024 16:05:41,13-02-2024 16:05:54,13.164s,PASSED
+"response = sendRequest(findTestObject(""Token""))",,,,13-02-2024 16:05:42,13-02-2024 16:05:48,6.209s,PASSED
+"token = getElementPropertyValue(response, ""token"")",,,,13-02-2024 16:05:48,13-02-2024 16:05:49,0.505s,PASSED
+"createBooking = sendRequest(findTestObject(""Object Repository/Post Booking - Create Data""))",,,,13-02-2024 16:05:49,13-02-2024 16:05:50,1.414s,PASSED
+bookingId = 0,,,,13-02-2024 16:05:50,13-02-2024 16:05:50,0.012s,PASSED
+"if (verifyResponseStatusCode(createBooking, 200))",,,,13-02-2024 16:05:50,13-02-2024 16:05:50,0.213s,PASSED
+"GetDatabyId = sendRequest(findTestObject(""Object Repository/Get By IdBooking"", [""id"":bookingId]))",,,,13-02-2024 16:05:50,13-02-2024 16:05:52,1.415s,PASSED
+"println(""booking idnya = "" + bookingId)",,,,13-02-2024 16:05:52,13-02-2024 16:05:52,0.022s,PASSED
+bookingId = bookingId,,,,13-02-2024 16:05:52,13-02-2024 16:05:52,0.001s,PASSED
+Video,,,,13-02-2024 16:05:54,13-02-2024 16:05:54,0.001s,PASSED
+,,,,,,,
+Test Cases/Delete Booking,,,,13-02-2024 16:06:05,13-02-2024 16:06:09,3.609s,FAILED
+"println(""ini tokennya "" + token)",,,,13-02-2024 16:06:05,13-02-2024 16:06:05,0.009s,PASSED
+"println(""ini idbookingnya "" + bookingId)",,,,13-02-2024 16:06:05,13-02-2024 16:06:05,0.013s,PASSED
+"deleteBooking = sendRequest(findTestObject(""Object Repository/Delete Booking"", [""id"":bookingId]))",,,,13-02-2024 16:06:05,13-02-2024 16:06:07,1.467s,PASSED
+"verifyResponseStatusCode(deleteBooking, 201)",,,,13-02-2024 16:06:07,13-02-2024 16:06:07,0.006s,FAILED

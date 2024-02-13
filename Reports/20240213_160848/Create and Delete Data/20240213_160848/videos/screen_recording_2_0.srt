@@ -1,0 +1,16 @@
+1
+00:00:00,143 --> 00:00:00,150
+1. println("ini tokennya " + token)
+
+2
+00:00:00,157 --> 00:00:00,163
+5. println("ini idbookingnya " + bookingId)
+
+3
+00:00:00,175 --> 00:00:01,943
+9. deleteBooking = sendRequest(findTestObject("Object Repository/Delete Booking", ["id":bookingId]))
+
+4
+00:00:01,951 --> 00:00:01,960
+13. verifyResponseStatusCode(deleteBooking, 201)
+

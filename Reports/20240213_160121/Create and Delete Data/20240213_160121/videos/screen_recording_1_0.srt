@@ -1,0 +1,36 @@
+1
+00:00:00,890 --> 00:00:07,229
+1. response = sendRequest(findTestObject("Token"))
+
+2
+00:00:07,255 --> 00:00:07,870
+5. token = getElementPropertyValue(response, "token")
+
+3
+00:00:07,885 --> 00:00:09,297
+9. createBooking = sendRequest(findTestObject("Object Repository/Post Booking - Create Data"))
+
+4
+00:00:09,307 --> 00:00:09,313
+13. bookingId = 0
+
+5
+00:00:09,325 --> 00:00:09,370
+17. if (verifyResponseStatusCode(createBooking, 200))
+
+6
+00:00:09,382 --> 00:00:09,469
+1. bookingId = getElementPropertyValue(createBooking, "bookingid")
+
+7
+00:00:09,488 --> 00:00:11,119
+21. GetDatabyId = sendRequest(findTestObject("Object Repository/Get By IdBooking", ["id":bookingId]))
+
+8
+00:00:11,128 --> 00:00:11,137
+25. println("booking idnya = " + bookingId)
+
+9
+00:00:11,148 --> 00:00:11,152
+29. bookingId = bookingId
+
